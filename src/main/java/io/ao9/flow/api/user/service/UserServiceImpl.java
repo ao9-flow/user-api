@@ -24,7 +24,6 @@ import io.ao9.flow.api.user.ui.model.AlbumResponseModel;
 @Service
 public class UserServiceImpl implements UserService {
 
-    // private Environment env;
     private UserRepository userRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     // private RestTemplate restTemplate;
@@ -45,7 +44,7 @@ public class UserServiceImpl implements UserService {
 
         UserDto outputUserDto = new ModelMapper().map(userEntity, UserDto.class);
 
-        // String albumsUrl = String.format(env.getProperty("albums.url.path") , userId);
+        // String albumsUrl = String.format("http://ALBUM-API/users/%s/albums" , userId);
         // ResponseEntity<List<AlbumResponseModel>> albumsResponse = restTemplate.exchange(albumsUrl, HttpMethod.GET, null, new ParameterizedTypeReference<List<AlbumResponseModel>>() {
         // });
         // List<AlbumResponseModel> albums = albumsResponse.getBody();
